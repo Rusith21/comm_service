@@ -1,9 +1,9 @@
 {
-     "build": {
-       "builder": "nixpacks",
-       "buildCommand": "pip install -r requirements.txt"
-     },
-     "start": {
-       "startCommand": "gunicorn app:app --workers 2 --bind 0.0.0.0:$PORT"
-     }
-   }
+  "build": {
+    "builder": "nixpacks",
+    "buildCommand": "pip install -r requirements.txt"
+  },
+  "start": {
+    "startCommand": "gunicorn wsgi:app --workers 2 --bind 0.0.0.0:$PORT"
+  }
+}
