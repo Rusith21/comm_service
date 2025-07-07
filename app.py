@@ -43,9 +43,11 @@ def create_app():
 
     return app
 
-# Entry point
+# Create the Flask app for WSGI servers
+app = create_app()
+
+# Entry point for local development
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
-    app = create_app()
     app.logger.info(f'Starting server on port {port}')
     app.run(host='0.0.0.0', port=port)
